@@ -8,11 +8,19 @@ from os.path import isfile, isdir, join, normpath
 import sys
 
 class case_creator():
+    '''
+    Class to set up Aspire cases in a nicer interface
+    '''
     def __init__(self, rootDir):
+        print("\x1b[1;30;41 !! Class is NOT a minimal working example !! \x1b[00m")
         self.rootDir = rootDir
     
 class case_reader():
+    '''
+    Class to read out and postprocess Aspire case results
+    '''
     def __init__(self, out_dir):
+        print("\x1b[1;30;41 !! Class is NOT a minimal working example !! \x1b[00m")
         self.out_dir = out_dir
 
         # Collect output files
@@ -62,7 +70,7 @@ class case_reader():
                 # sys.stdout.flush()
                 # sys.stdout.write(f"\rProgress : |{"\x1b[0;30;47m \x1b[0m" * prog}{" " * (10 - prog)}| {(k*100)//K+1:3d}%")
 
-        fig.savefig("plot1.png")
+        fig.savefig("dump/plot1.png")
 
 def show_ansi_table():
     for style in range(5):  # 0: normal, 1: bold/bright
@@ -76,7 +84,7 @@ def show_ansi_table():
 if __name__=="__main__":
     cr = case_reader(out_dir = r"/home/sachinumans/02_Code/220113_2WF/2022/01/13/00/")
     # cr.print_outfile_summary()
-    cr.write_flowfield_video()
+    # cr.write_flowfield_video()
 
     # show_ansi_table()
     
